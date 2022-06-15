@@ -26,8 +26,8 @@ steps:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: 'coverage/cobertura-coverage.xml'
 
-- task: CopyPublishBuildArtifacts@1
+- task: PublishBuildArtifacts@1
   inputs:
-    Contents: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'Output'
-    ArtifactType: 'Container'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
